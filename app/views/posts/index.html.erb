@@ -1,0 +1,38 @@
+<h2>
+スケジュール一覧
+</h2>
+
+<% if flash[:notice] %>
+  <p class="flash">
+    <%= flash[:notice] %>
+  </p>
+<% end %>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>タイトル</th>
+    <th>日時</th>
+    <th>スケジュール更新日時</th>
+    <th>確認</th>
+    <th>編集</th>
+    <th>削除</th>
+  </tr>
+  <% @posts.each do |post| %>
+  <tr>
+    <td><%= post.id %></td>
+    <td><%= post.title %></td>
+    <td><%= post.date %></td>
+    <td><%= l post.updated_at %></td>
+    <td><%= link_to("確認", "/posts/#{post.id}") %></td>
+    <td><%= link_to("編集", "/posts/#{post.id}/edit") %></td>
+    <td><%= link_to("削除", "/posts/#{post.id}/destroy", {method: "post"}) %></td>
+  </tr>
+  <% end %>
+
+</table>
+
+
+<%= link_to("新規投稿", "/posts/new") %>
+
+
