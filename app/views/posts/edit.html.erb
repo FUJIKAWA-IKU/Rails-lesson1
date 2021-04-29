@@ -1,0 +1,44 @@
+<h2>
+  スケジュール編集
+</h2>
+
+<%= form_tag("/posts/#{@post.id}/update") do %>
+  <% @post.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+  <table>
+    <tr>
+      <th>
+        タイトル
+      </th>
+      <td>
+        <input name="title" value="<%= @post.title %>">
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        日時
+      </th>
+      <td>
+        <input type="date" name="date" value="<%= @post.date %>">
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        スケジュールメモ
+      </th>
+      <td>
+        <textarea name="content"><%= @post.content %></textarea>
+      </td>
+    </tr>
+
+  </table>
+
+  <input type="submit" value="更新">
+
+<% end %>
+
+<%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+<%= link_to("スケジュール一覧", "/posts/index") %>

@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+header {
+  background-color: palevioletred;
+}
+
+h1 {
+  color: pink;
+  padding: 30px;
+}
+
+footer {
+  margin-top: 20px;
+  background-color: palevioletred;
+  color: pink;
+  padding: 30px;
+}
+
+h3 {
+  color: pink;
+  font-size: 30px;
+  margin: 0;
+}
+
+.flash {
+  background-color: royalblue;
+  color: white;
+  padding: 10px;
+}

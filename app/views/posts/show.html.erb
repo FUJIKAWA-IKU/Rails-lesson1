@@ -1,0 +1,36 @@
+<h2>
+  スケジュール詳細
+</h2>
+
+<table>
+  <tr>
+    <th>
+      タイトル
+    </th>
+    <td>
+      <%= @post.title %>
+    </td>
+  </tr>
+
+  <tr>
+    <th>
+      日時
+    </th>
+    <td>
+    <%= @post.date %>
+    </td>
+  </tr>
+
+  <tr>
+    <th>
+      スケジュールメモ
+    </th>
+    <td>
+      <%= @post.content %>
+    </td>
+  </tr>
+</table>
+
+<%= link_to("スケジュール一覧", "/posts/index") %>
+<%= link_to("編集", "/posts/#{@post.id}/edit") %>
+<%= link_to("削除", "/posts/#{@post.id}/destroy") %>
